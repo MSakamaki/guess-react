@@ -10,8 +10,9 @@ import About from './template/about';
 import Archives from './template/archives';
 import Home from './template/home';
 
-const history = createBrowserHistory()
-
+const history = createBrowserHistory({
+  basename: 'guess-react'
+})
 
 class App extends React.Component {
   public render() {

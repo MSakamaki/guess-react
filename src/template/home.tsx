@@ -2,6 +2,7 @@ import gql from "graphql-tag";
 import * as React from 'react';
 import { ChildProps, DataValue, graphql, OperationVariables } from "react-apollo";
 import * as Markdown from 'react-markdown';
+import { IResponse } from '../interface/contents';
 
 const query = gql`{
     contents(first: 1, orderBy: id_DESC) {
@@ -10,16 +11,6 @@ const query = gql`{
       content
     }
   }`;
-
-interface IContents {
-  title: string;
-  author: string;
-  content: string;
-}
-
-interface IResponse {
-  contents: IContents[];
-}
 
 const withCharacter = graphql<{}, IResponse>(query, {});
 
